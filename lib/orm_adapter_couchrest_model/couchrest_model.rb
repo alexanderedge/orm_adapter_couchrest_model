@@ -31,6 +31,7 @@ module CouchRest
         end
 
         def find_all(options = {})
+
           conditions, order, limit, offset = extract_conditions!(options)
           if conditions.empty?
             klass.all(:limit => limit, :skip => offset).all
